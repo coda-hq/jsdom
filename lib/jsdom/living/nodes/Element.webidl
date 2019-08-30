@@ -1,3 +1,4 @@
+// https://dom.spec.whatwg.org/#element
 [Exposed=Window]
 interface Element : Node {
   readonly attribute DOMString? namespaceURI;
@@ -40,8 +41,8 @@ interface Element : Node {
   HTMLCollection getElementsByTagNameNS(DOMString? namespace, DOMString localName);
   HTMLCollection getElementsByClassName(DOMString classNames);
 
-//  [CEReactions] Element? insertAdjacentElement(DOMString where, Element element); // historical
-//  void insertAdjacentText(DOMString where, DOMString data); // historical
+  [CEReactions] Element? insertAdjacentElement(DOMString where, Element element); // historical
+  void insertAdjacentText(DOMString where, DOMString data); // historical
 };
 
 dictionary ShadowRootInit {
@@ -88,5 +89,3 @@ partial interface Element {
   readonly attribute long clientWidth;
   readonly attribute long clientHeight;
 };
-
-Element implements Slotable;
